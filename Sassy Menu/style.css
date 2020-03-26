@@ -1,0 +1,136 @@
+*,
+*::after,
+*::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+.btn {
+    background-color: cornflowerblue;
+    padding: 1rem 3rem;
+    border-radius: .25rem;
+    width: max-content;
+    cursor: pointer;
+}
+
+#close {
+    position: absolute;
+    background-color: crimson;
+    right: 0;
+    top: 0;
+    margin: 1rem;
+    text-decoration: none;
+    font-size: 1rem;
+    color: whitesmoke;
+}
+
+nav.appear {
+    transform: translateY(0)!important;
+    opacity: 1!important;
+    visibility: visible!important;
+    transition: 400ms ease-in-out;
+}
+
+nav {
+    background-color: cornflowerblue;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-50%);
+    transition: 400ms ease-in-out;
+}
+
+.nav-list {
+    list-style: none;
+}
+
+.nav-link {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 300px;
+    height: 100px;
+    font-size: 2rem;
+    font-weight: 900;
+    text-transform: uppercase;
+    background-color: whitesmoke;
+    scale: 0.8;
+    opacity: 0.9;
+    transition: 250ms ease-in-out;
+    transform: perspective(100rem) rotateX(25deg) skew(25deg);
+    text-decoration: none;
+    color: #0e0a0a;
+}
+
+.nav-link:hover {
+    opacity: 1;
+    scale: 1;
+    transform: translate(10%, 0%);
+}
+
+.nav::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 50%;
+    background-color: rgba(255, 255, 255, 0.051);
+    z-index: -1;
+    pointer-events: none;
+}
+
+.nav::before {
+    content: attr(data-text);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -2;
+    color: #08080838;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 10rem;
+    font-weight: 900;
+    letter-spacing: 500px;
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transition: all 400ms ease-in-out;
+}
+
+.nav:hover::before {
+    opacity: 1;
+    visibility: visible;
+    letter-spacing: 10px;
+}
+
+.nav:nth-child(6n+1)::before{
+    background-color: teal;
+}
+.nav:nth-child(6n+2)::before{
+    background-color: tomato;
+}
+.nav:nth-child(6n+3)::before{
+    background-color: turquoise;
+}
+.nav:nth-child(6n+4)::before{
+    background-color: yellowgreen;
+}
+.nav:nth-child(6n+5)::before{
+    background-color: rebeccapurple;
+}
+.nav:nth-child(6n+6)::before{
+    background-color: orangered;
+}
